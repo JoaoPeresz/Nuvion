@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,100,900');
 
-:global(*) {
+.container :global(*) {
     box-sizing: inherit;
     transition-property: all;
     transition-duration: .6s;
@@ -26,9 +26,10 @@
     border-radius: 8px;
     overflow: hidden;
     transition: all 0.5s ease;
-    box-shadow: 0px 0px 23px -2px rgba(39,39,43,0.75);
-    -webkit-box-shadow: 0px 0px 23px -2px rgba(39,39,43,0.75);
-    -moz-box-shadow: 0px 0px 23px -2px rgba(39,39,43,0.75);
+    box-shadow: 0 0 23px -2px rgba(39,39,43,0.75);
+    -webkit-box-shadow: 0 0 23px -2px rgba(39,39,43,0.75);
+    -moz-box-shadow: 0 0 23px -2px rgba(39,39,43,0.75);
+    background-color: rgba(20, 20, 20, 0.1);
 }
 
 .btn svg {
@@ -53,10 +54,9 @@
 
 .btn:hover {
     transition: all 0.5s ease 0.7s;
-    box-shadow: 0px 0px 30px -2px rgba(0,255,156,0.75);
-    -webkit-box-shadow: 0px 0px 30px -2px rgba(0,255,156,0.75);
-    -moz-box-shadow: 0px 0px 30px -2px rgba(0,255,156,0.75);
-    color: #00FF9C;
+    box-shadow: 0 0 30px -2px rgba(0,255,156,0.75);
+    -webkit-box-shadow: 0 0 30px -2px rgba(0,255,156,0.75);
+    -moz-box-shadow: 0 0 30px -2px rgba(0,255,156,0.75);
 }
 
 .btn:hover rect {
@@ -68,9 +68,9 @@
 
 .btn:active {
     transform: translateY(3px) scale(0.97);
-    box-shadow: 0px 0px 15px -2px rgba(0,255,156,0.5);
-    -webkit-box-shadow: 0px 0px 15px -2px rgba(0,255,156,0.5);
-    -moz-box-shadow: 0px 0px 15px -2px rgba(0,255,156,0.5);
+    box-shadow: 0 0 15px -2px rgba(0,255,156,0.5);
+    -webkit-box-shadow: 0 0 15px -2px rgba(0,255,156,0.5);
+    -moz-box-shadow: 0 0 15px -2px rgba(0,255,156,0.5);
     transition: all 0.1s ease;
 }
 
@@ -84,4 +84,51 @@
     .btn {
         margin: 0 1em 2em;
     }
+}
+
+.btnDisabled {
+    opacity: 0.6;
+    box-shadow: 0 0 10px -2px rgba(100,100,100,0.3);
+    -webkit-box-shadow: 0 0 10px -2px rgba(100,100,100,0.3);
+    -moz-box-shadow: 0 0 10px -2px rgba(100,100,100,0.3);
+    color: rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.btnDisabled::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: grayscale(1);
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.btnDisabled rect {
+    stroke: #888;
+    stroke-width: 3;
+    stroke-dasharray: 15, 310;
+    stroke-dashoffset: 48;
+}
+
+.btnDisabled:hover {
+    box-shadow: 0 0 10px -2px rgba(100,100,100,0.3);
+    -webkit-box-shadow: 0 0 10px -2px rgba(100,100,100,0.3);
+    -moz-box-shadow: 0 0 10px -2px rgba(100,100,100,0.3);
+    transform: none;
+}
+
+.btnDisabled:hover rect {
+    stroke-width: 3;
+    stroke-dasharray: 15, 310;
+    stroke-dashoffset: 48;
+    transition: none;
+}
+
+.btnDisabled:active {
+    transform: none;
+    box-shadow: 0 0 10px -2px rgba(100,100,100,0.3);
 }

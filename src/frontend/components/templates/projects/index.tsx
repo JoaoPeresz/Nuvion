@@ -83,7 +83,6 @@ export default function Projects() {
                     {/*)}*/}
                     {/*<BrowseStyle/>*/}
                     {/*<GoodReviews/>*/}
-                    {/*<Footer/>*/}
                 </section>
             </section>
         </Fragment>
